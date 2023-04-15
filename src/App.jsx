@@ -87,16 +87,16 @@ function App() {
     })
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     sendTemperatureData();
-  //     fetchTemperatureData();
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      sendTemperatureData();
+      fetchTemperatureData();
+    }, 5000);
 
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, [])
+    return () => {
+      clearInterval(interval);
+    };
+  }, [])
 
   return (
     <div className="App">
