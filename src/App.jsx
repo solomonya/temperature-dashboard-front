@@ -76,22 +76,10 @@ function App() {
     dispatch({ type: ActionsType.DATA_FETCHED, payload: temperatureData });
   };
 
-  const sendTemperatureData = async () => {
-    const message = JSON.stringify({ temperature_value: parseFloat(randomFromInterval(20, 40)) });
-    await fetch(`${settings.API_URL}/temperature/`, {
-      method: 'POST',
-      body: message,
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
-      sendTemperatureData();
       fetchTemperatureData();
-    }, 5000);
+    }, 3000);
 
     return () => {
       clearInterval(interval);
